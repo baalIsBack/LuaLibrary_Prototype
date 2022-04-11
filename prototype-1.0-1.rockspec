@@ -1,8 +1,8 @@
 package = "Prototype"
-version = "1.0-0"
+version = "1.0-1"
 source = {
    url = "git+https://github.com/baalIsBack/LuaLibrary_Prototype.git",
-   tag = "v1.0-0"
+   tag = "v1.0-1"
 }
 description = {
    summary = "A simple Prototype object that can be extended and instantiated recursively.",

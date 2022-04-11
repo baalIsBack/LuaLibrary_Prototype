@@ -52,6 +52,10 @@ end
 function Prototype_mt:__tostring()
 	return self.__name or "unnamed"
 end
+
+function Prototype_mt:__call(...)
+	return self
+end
 --[[/Prototype Metatable]]
 --[[Prototype]]
 --[[Prototype Metamethods]]
@@ -59,8 +63,8 @@ function Prototype:__index(k)
 	return getmetatable(self)[k]
 end
 
-function Prototype:__call(self, ...)
-	self:init(...)
+function Prototype:__call(...)
+	return self:init(...)
 end
 --[[/Prototype Metamethods]]
 
@@ -74,6 +78,9 @@ function Prototype:new(new_name)
 	end
 	function instance:__index(k)
 		return getmetatable(self)[k]
+	end
+	function instance:__call(...)
+		return self:init(...)
 	end
 	return instance
 end
